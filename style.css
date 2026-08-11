@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+.contenedor {
+    background-color: red;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.caja {
+    background-color: blue;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: bisque;
+    color: blue;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.cuenta {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}

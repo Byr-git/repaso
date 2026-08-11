@@ -4,15 +4,13 @@ const gastos = [
     {descripcion: 'Jugo de naranja', categoria: 'Comida', monto: 0.50}
 ]
 
-// Crear una función agregarGasto() que reciba la descripción, categoría y monto, y agregue un nuevo gasto al array.
+// 1. Crear una función agregarGasto() que reciba la descripción, categoría y monto, y agregue un nuevo gasto al array.
 function agregarGasto(descripcion, categoria, monto) {
     gastos.push({descripcion: descripcion, categoria: categoria, monto: monto})
 }
-
 agregarGasto("Cuaderno", "Útiles", 9.72)
 
-// Crear una función calcularTotal() que devuelva cuánto dinero se ha gastado en total.
-// Bucle for y reduce
+// 2. Crear una función calcularTotal() que devuelva cuánto dinero se ha gastado en total (Usando bucle for, sin reduce)
 function calcularTotal() {
     let total = 0
     for (let i = 0; i < gastos.length; i++) {
@@ -21,30 +19,30 @@ function calcularTotal() {
     return total
 }
 
-const totalGasto = gastos.reduce((accum, num) => accum + num.monto, 0)
-
-// Crear una función mostrarPorCategoria(categoria) que muestre únicamente los gastos pertenecientes a esa categoría.
+// 3. Crear una función mostrarPorCategoria(categoria) que muestre únicamente los gastos pertenecientes a esa categoría.
 function mostrarPorCategoria(categoria) {
-    let gastoPorCategoria = 0
+    let gastoPorCategoria = []
     for (let i = 0; i < gastos.length; i++) {
         if (gastos[i].categoria === categoria) {
-            gastoPorCategoria += gastos[i].monto
+            gastoPorCategoria.push(gastos[i])
         }
     }
     return gastoPorCategoria
 }
 
+// console.log(mostrarPorCategoria('Comida'))
+
 // Crear una función gastoMayor() que encuentre cuál ha sido el gasto más caro.
 function gastoMayor() {
     let mayor = 0
-    let categoria = ""
+    let gastoMasCaro = null
     for (let i = 0; i < gastos.length; i ++) {
         if (gastos[i].monto > mayor) {
             mayor = gastos[i].monto
-            categoria = gastos[i].categoria
+            gastoMasCaro = gastos[i]
         }
     }
-    return mayor
+    return gastoMasCaro
 }
 
 console.log(gastoMayor())
